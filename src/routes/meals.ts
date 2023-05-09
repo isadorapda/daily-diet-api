@@ -39,7 +39,7 @@ export async function mealRoutes(app: FastifyInstance) {
 
       const meal = await knex('daily-meals')
         .where({ id, session_id: sessionId })
-        .select()
+        .first()
 
       return { meal }
     },
